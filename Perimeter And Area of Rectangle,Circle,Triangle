@@ -1,0 +1,97 @@
+import java.util.Scanner;
+abstract class Shape{
+    abstract double calculatePerimeter();
+    abstract double calculateArea();
+}
+class Rectangle extends Shape{
+    double length,width;
+    Rectangle(double length,double width) {
+        this.length = length;
+        this.width=width;
+    }
+    double calculatePerimeter() {
+        return 2 * (length +width);
+    }
+    double calculateArea(){
+        return (length*width);
+    }
+    }
+    class Circle extends Shape {
+        double radius;
+        Circle(double radius){
+        
+    this.radius= radius;
+    }
+    double calculatePerimeter() {
+        return (radius+radius);
+    }
+    double calculateArea(){
+        return 2* (radius*radius);
+    }
+    }
+    class Triangle extends Shape {
+        double side1;
+        double side2;
+        double side3;
+        Triangle(double side1,double side2, double side3){
+        this.side1=side1;
+        this.side2=side2;
+        this.side3=side3;
+    }
+    double calculatePerimeter(){
+        return (side1+side2+side3);
+    }
+    double calculateArea(){
+        return 0.5* (side1*side2);
+    }
+    }
+    public class Main{
+        public static void main(String[] args){
+            Scanner S= new Scanner(System.in);
+            System.out.println("Enter length of rectangle:");
+            double length = S.nextDouble();
+            System.out.println("Enter width of the rectangle:");
+            double width = S.nextDouble();
+            Shape rectangle = new Rectangle(length,width);
+            System.out.println("Perimeter od Rectangle:"+rectangle.calculatePerimeter());
+            System.out.println("Area of Rectangle:"+rectangle.calculateArea());
+            System.out.println("Enter the radius of the Circle:");
+            double radius= S.nextDouble();
+            Shape circle = new Circle(radius);
+            System.out.println("Perimeter of the Circle is:"+circle.calculatePerimeter());
+            System.out.println("Area of Circle is :" +circle.calculateArea());
+            
+            System.out.println("Enter the Side1:");
+            double side1=S.nextDouble();
+            System.out.println("Enetr the Side2:");
+            double side2=S.nextDouble();
+            System.out.println("Enetr the Side3:");
+            double side3=S.nextDouble();
+            Shape triangle= new Triangle(side1,side2,side3);
+            System.out.println("Perimeter of the Triangle is:"+triangle.calculatePerimeter());
+            System.out.println("Area of the Triangle  is :"+triangle.calculateArea());
+            
+    
+    S.close();
+}
+}
+
+OutPut:
+Enter length of rectangle:
+2
+Enter width of the rectangle:
+4
+Perimeter od Rectangle:12.0
+Area of Rectangle:8.0
+Enter the radius of the Circle:
+3
+Perimeter of the Circle is:6.0
+Area of Circle is :18.0
+Enter the Side1:
+4
+Enetr the Side2:
+5
+Enetr the Side3:
+6
+Perimeter of the Triangle is:15.0
+Area of the Triangle  is :10.0
